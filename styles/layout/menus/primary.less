@@ -1,0 +1,164 @@
+// primary nav
+
+.navigation-section {
+	@media (min-width: @screen-md-min) {
+
+	}
+}
+
+.menu-primary {
+	background: @teal url('../img/single/teal-noise.png') repeat;
+
+	@media (min-width: @screen-md-min) {
+		background: none;
+	}
+
+	.block-title {
+		display: none;
+	}
+	
+	.menu {
+		position: relative;
+		@media (min-width: @screen-md-min) {
+			width: 200px;
+		}
+
+		li {
+			display: block;
+			margin: 0;
+			border-right: 1px solid darken(@teal, 10%);
+			border-bottom: 1px solid darken(@teal, 10%);
+
+			@media (min-width: @screen-sm-min) {
+				float: left;
+			}
+
+			@media (min-width: @screen-md-min) {
+				float: none;
+				border: none;
+				margin-bottom: 10px;
+			}
+
+		}
+
+		a {
+			color: @white;
+			background: @teal;
+			font-family: @font-family-headings;
+			text-shadow: 0 1px 2px rgba(0,0,0,.2);
+			font-size: 15px;
+			line-height: 21px;
+			text-transform: uppercase;
+			display: block;
+			padding: 10px 25px;
+			@media (min-width: @screen-sm-min) {
+				display: inline-block;
+				padding: 10px 15px;
+			}
+			@media (min-width: @screen-md-min) {
+				transition: padding .2s ease-in-out;
+				padding: @padding-base-vertical 26px 6px 20px;
+				border-radius: 0 @border-radius-base @border-radius-base 0;
+			}
+
+			&:hover {
+				color: @blue;
+				background: @teal;
+				@media (min-width: @screen-md-min) {
+					padding-left: 32px;
+				}
+			}
+		}
+
+		.dropdown-menu {
+			background: lighten(@teal, 5%);
+			padding: 0;
+
+			@media (min-width: @screen-sm-min) {
+				position: absolute;
+				width: 100%;
+				list-style: none;
+				padding: 0;
+				left: 0;
+				bottom: -41px;
+				height: 41px;
+				padding-top: 5px;
+			}
+
+			@media (min-width: @screen-md-min) {
+				margin: 0 0 0 26px;
+				background: none;
+				position: relative;
+				width: auto;
+				left: auto;
+				bottom: auto;
+				height: auto;
+			}
+
+			li {
+				margin-bottom: 0px;
+			}
+
+			a {
+				padding-top: 0;
+
+				text-transform: none;
+				font-family: @font-family-base;
+				background: none;
+				font-weight: 300;
+				border-radius: none;
+				color: @white;
+
+				@media (min-width: @screen-md-min) {
+					padding: 0;	
+				}
+
+				&:hover {
+					color: @blue;
+				}		
+			}
+		}
+
+		.active-trail > a {
+			color: @blue;
+			//background: @teal;
+
+			&:hover {
+				color: @blue;
+				//padding-left: 26px;
+			}
+
+			&:focus {
+				background: @teal;
+			}
+		}
+
+		.dropdown-menu .active-trail > a {
+
+			&:hover {
+				//padding: 0;
+			}
+		}
+	}
+
+	.expanded {
+		@media (min-width: @screen-md-min) {
+			background: @teal;
+			border-radius: 0 @border-radius-base @border-radius-base 0;
+			padding: 2px 0 20px;
+		}
+
+		li {
+			border: none;
+		}
+
+		& > a {
+			display: block;
+			background: lighten(@teal, 5%);
+			@media (min-width: @screen-md-min) {
+				background: none;
+				padding: @padding-base-vertical 26px;
+			}
+		}
+	}
+}

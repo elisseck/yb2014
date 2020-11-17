@@ -1,0 +1,819 @@
+// civi overrides - there is a lot of over-specified css in here because we are competing the the civi stylesheeet
+
+#crm-container {
+	line-height: 1.538em;
+	font-size: 18px
+}
+
+// hide print icon
+#printer-friendly {
+	display: none;
+}
+
+.crm-container input, #civicrm-menu input {
+	box-sizing: border-box;
+}
+
+// default input styles
+#crm-container.crm-public input[type="text"],
+#crm-container.crm-public select {
+		.form-control;
+		max-width: inherit;
+		display: block;
+		margin-bottom: 5px;
+
+}
+#crm-container.crm-public select {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+//default label styles
+div.crm-container label {
+	color: @text-color;
+	padding: 0;
+	max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: none !important;
+	word-spacing: .5px;
+	white-space: normal;
+}
+
+#crm-container.crm-public .label {
+	position: relative;
+	padding-left: 0;
+
+	.crm-marker {
+		display: block;
+		position: absolute;
+		top: 8px;
+		right: -8px;
+	}
+}
+
+// Make horiztonal fields wider
+.crm-container .crm-section  {
+	.label { width: 25%; }
+	.content {margin-left: 27%; }
+}
+
+// Add spaceing bettween field rows
+#crm-container.crm-public fieldset .crm-section {
+	margin-bottom: .5em;
+}
+
+// Make horizontal fields label line up with baseline
+#crm-container.crm-public fieldset .crm-section .label {
+	line-height: 34px;
+}
+
+// override left aligned labels for mobile
+@media (max-width: @screen-sm-max) {
+	.crm-container .crm-section .label,
+	.crm-container-snippet .crm-section .label {
+		float: none;
+		text-align: left;
+		padding: 0;
+		display: inline-block;
+		width: auto;
+
+		.crm-marker {
+			position: static !important;
+			display: inline-block !important;
+		}
+	}
+	.crm-container .crm-section .content,
+	.crm-container-snippet .crm-section .content {
+		margin-left: 0;
+		display: block;
+	}
+}
+
+// styles for price buttons
+
+#priceset {
+
+	&.crm-section.price_set-section {
+		margin-bottom: 20px;
+	}
+
+	.crm-section.contribution_amount-section {
+		margin-bottom: 10px;
+	}
+
+	.crm-section .content {
+		margin: 0;
+	}
+
+	.label {
+		display: none;
+	}
+
+	.other_amount-section .label {
+		display: block;
+		float: none;
+		text-align: left;
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.other_amount-content.content input[type="text"] {
+		width: 100%;
+		display: block;
+	}
+
+	.price-set-row {
+		display: inline-block;
+		margin-right: 1px;
+	}
+
+	.price-set-option-content {
+		position: relative;
+
+		label {
+			.btn;
+			padding-left: 36px;
+			color: @white;
+
+			&:hover {
+				color: @blue-dark;
+			}
+		}
+
+		input {
+			position: absolute;
+			top: -2px;
+			left: 12px;
+		}
+	}
+
+	.contribution_amount-content {
+		max-width: 40em;
+	}
+
+	// competing with civi css
+	.price-set-row .price-set-option-content .crm-price-amount-amount {
+		color: @white;
+	}
+
+	.price-set-row.highlight .price-set-option-content .crm-price-amount-amount {
+		color: @white;
+	}
+
+	.price-set-row .price-set-option-content label:hover .crm-price-amount-amount {
+		color: @blue-dark;
+	}
+
+	.price-set-row.highlight .price-set-option-content label {
+		color: @white;
+	}
+}
+
+#crm-container {
+	.is_recur-section {
+
+		&.crm-section {
+			// margin-bottom: 20px;
+		}
+
+		.label {
+			display: none;
+		}
+
+		.content {
+			margin-left: 0;
+		}
+		input[type='checkbox'] {
+			margin-right: .25em;
+		}
+		input[type='text'] {
+			width: auto;
+			display: inline-block;
+		}
+
+		label,.content {
+			letter-spacing: normal;
+			text-transform: none;
+			font-size: 18px;
+			font-weight: normal;
+		}
+	}
+
+	.email-5-section {
+
+		&.crm-section {
+			margin-bottom: 40px;
+		}
+
+		.label {
+			display: block;
+			float: none;
+			text-align: left;
+			width: 100%;
+			padding-left: 0;
+
+			label {
+				color: @text-color;
+				padding: 0;
+		  		max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+		  		font-size: 14px;
+		  		font-weight: normal;
+		  		letter-spacing: 1px;
+		  	}
+		}
+
+		input[type="text"] {
+			width: 100%;
+			display: block;
+		}
+
+		.content {
+			margin: 0;
+		}
+	}
+
+	.honor_type_id-section {
+
+		&.crm-section {
+			margin-bottom: 10px;
+		}
+
+		.content {
+			margin: 0;
+		}
+
+		label {
+			margin-left: 8px;
+			margin-right: 20px;
+		}
+	}
+
+	.custom_pre_profile-group {
+		.label {
+			float: none;
+			margin: 0;
+			text-align: left;
+			width: auto;
+		}
+		.content {
+			margin: 0;
+		}
+	}
+
+	.messages.help {
+		background: none;
+		border: none;
+		padding: 0;
+
+	}
+	fieldset.crm-profile-name-Donor_Designations .messages.help {
+		line-height: 1.538em;
+		font-size: 16px;
+
+		p { margin-bottom: 16px; }
+		b,strong {.h6; font-weight: normal;}
+	}
+
+	.payment_processor-section {
+		.content label {
+			margin-right: 30px;
+		}
+
+		input[type="radio"], input[type="checkbox"] {
+			margin-right: 8px;
+		}
+	}
+}
+
+.crm-container fieldset {
+	border-top: 1px solid @teal;
+	border-radius: @border-radius-base;
+	padding: 20px;
+	margin-bottom: 20px;
+
+	legend {
+		.h3;
+		font-weight: normal;
+		margin: 0;
+	}
+}
+
+.crm-container a.button, .crm-container a.button:link, .crm-container a.button:visited, .crm-container input.form-submit, #crm-container input[type=button], #crm-container input.form-submit-inline, #crm-container .crm-button {
+	text-shadow: none;
+	background: none;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	margin: 0;
+	border: none;
+}
+
+
+#crm-container .crm-button input[type=button],
+#crm-container .crm-button input.form-submit,
+#crm-container .crm-button input.form-submit-inline,
+#crm-container.crm-public #crm-submit-buttons input#_qf_Main_upload-bottom {
+	.btn;
+	text-shadow: none;
+	font-size: 26px;
+	padding: 20px 30px;
+	margin: 0;
+}
+
+#crm-container.crm-public .recaptcha_r4_c1 input[type="text"] {
+	padding: 0 4px!important;
+	margin: 12px 0 0 !important;
+	font-size: 10px !important;
+	height: auto !important;
+	color: black !important;
+}
+
+// menu stuff
+.menu-block-2 .menu{
+	text-align: center;
+	.list-inline;
+}
+
+//two column front page, panels stuff
+.panels-flexible-region-inside {
+	padding-right: 40px;
+}
+
+// footer stuff
+.main-footer {
+	padding-top: 60px;
+}
+
+ul.logo-group {
+	margin-bottom: 20px;
+}
+
+
+// user login stuff
+.block-user {
+   	.card();
+	background: @white;
+	max-width: none;
+	text-align: left;
+	margin-bottom: 40px;
+
+	h2 {
+		.card-label();
+		background: @blue;
+		margin: 0 0 10px 20px;
+
+		&:after {
+			color: @yellow;
+		}
+	}
+
+	#user-login-form {
+		text-align: left;
+		padding: 0 21px 21px;
+	}
+
+	input[type="text"],
+	input[type="password"] {
+		.form-control();
+	}
+
+	input[type="submit"] {
+		.btn();
+		display: inline-block;
+		padding: 3px 20px;
+		margin-top: 3px;
+	}
+
+	.item-list {
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			display: inline-block;
+			margin: 0 10px 0 0;
+		}
+
+		a {
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 21px;
+		}
+	}
+
+	.form-item {
+
+		@media (min-width: @screen-sm) {
+			display: inline-block;
+			width: 230px;
+			margin-right: 5px;
+		}
+	}
+}
+
+// attempting to float event info login
+// .page-civicrm-event-info {
+// 	.region-content-top {
+// 		float: right;
+// 		max-width: 270px;
+// 		width: 40%;
+// 	}
+
+// 	.crm-container {
+// 		.clear {
+// 			display: none;
+// 		}
+// 	}
+// }
+
+// event register button
+.crm-container a.button.crm-register-button {
+	.btn();
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+// overriding panel floats
+.panels-flexible-region-1-middle_left,
+.panels-flexible-region-1-middle_right,
+.panels-flexible-region-1-bottom_right,
+.panels-flexible-region-1-bottom_left {
+	@media (max-width: @screen-sm) {
+		float: none;
+		width: 100%;
+		margin-bottom: 40px;
+	}
+}
+
+.panels-flexible-region-inside {
+	@media (max-width: @screen-sm) {
+		padding: 0;
+	}
+}
+
+// responsive images
+
+img {
+	max-width: 100%;
+	height: auto !important;
+}
+
+
+
+// SELECT2
+
+.select2-drop-active,
+.select2-container a.select2-choice {
+	background-color: @white;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	background-image: none !important;
+	border: 1px solid #dddddd;
+	border-radius: 2px;
+}
+
+.select2-container.select2-container-active a.select2-choice,
+.select2-drop-active {
+    border-color: #66afe9;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.select2-drop-active:before {
+	content: '';
+	background-color: @white;
+	height: 10px;
+	width: 100%;
+	top: -8px;
+	position: absolute;
+}
+
+.crm-container .select2-container .select2-choice abbr {
+	top: 11px;
+}
+
+.crm-public .select2-container .select2-choice .select2-arrow b {
+	top: 4px;
+}
+
+.crm-public .select2-container .select2-choice .select2-arrow {
+	background-image: none;
+	border: none;
+	background-color: transparent;
+}
+
+.crm-container .select2-container .select2-choice > .select2-chosen {
+	color: @blue-dark;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 22px;
+	height: 22px;
+}
+
+
+.crm-container {
+	input[type='radio'] {
+		margin-top: 4px;
+		vertical-align: text-top;
+		margin-right: .25em;
+	}
+	input[type='radio']:first-child {
+		margin-left: 3px;
+	}
+
+	input[type='radio'] + label {
+	}
+	input[type='radio'] + label:after {
+		content: '\A';
+		white-space: pre
+	}
+}
+
+#crm-container .custom_pre_profile-group .content.description {
+	// move help text up a bit
+	margin-top: -8px;
+}
+
+#crm-container {
+	.crm-section.cvv2-section input {
+		width: 100px;
+		display:  inline-block;
+	}
+	.crm-section.cvv2-section .cvv2-icon {
+		margin-top: 2px;
+	}
+
+	.crm-section.credit_card_exp_date-section select {
+		display: inline-block;
+		width: 100px;
+	}
+
+	.crm-section.soft_credit_type_id-section {
+		position: relative;
+		a.crm-clear-link {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			color: @teal;
+			font-weight: normal;
+		}
+		a.crm-clear-link span {
+			display: none;
+		}
+
+		a.crm-clear-link:hover {
+			background: none;
+			border: none;
+		}
+
+		a.crm-clear-link:after {
+			content: 'Remove Honoree';
+		}
+
+		input[type='radio']:checked ~ a.crm-clear-link {
+			display: block;
+		}
+	}
+
+	.crm-button .crm-button-icon {
+		display: none;
+	}
+
+	div.status {
+		background-color: @teal;
+		color: white;
+		padding: 10px 20px;
+		border-radius: @border-radius-base;
+		border: none;
+
+		a {
+			color: white;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+	}
+
+    .crm-event-register-form-block,
+    .crm-event-additionalparticipant-form-block {
+
+		fieldset.crm-profile:not(.crm-profile-id-43) {
+
+			.crm-section.form-item {
+				.label {
+					display: block;
+					width: 100%;
+					text-align: left;
+					margin-bottom: 6px;
+					line-height: 1.5em;
+				}
+				label {
+					letter-spacing: normal;
+				}
+				.content {
+					margin-left: 0;
+				}
+				.crm-marker {
+					display: inline;
+					position: static;
+				}
+			}
+
+			textarea {
+				.form-control;
+				height: 65px;
+			}
+		}
+	}
+}
+
+#Register > div.messages.crm-error > div.icon {
+	display: none;
+}
+
+
+#crm-container .crm-contribution-confirm-form-block,
+#crm-container .crm-contribution-thankyou-form-block,
+#crm-container .crm-event-confirm-form-block,
+#crm-container .crm-event-thankyou-form-block {
+
+	& > div#help {
+	    background-color: #dff0d8;
+	    border-color: #d6e9c6;
+	    color: #3c763d;
+	    padding: 10px 25px;
+	    border-radius: @border-radius-base;
+	    margin-bottom: 20px;
+	}
+
+	.crm-profile-view-title {
+		color: @blue-dark;
+	}
+
+	.crm-group {
+		border-top: 1px solid @teal;
+		margin: 40px 0;
+		font-size: 18px !important;
+
+		&.event_fees-group .crm-section {
+			margin-left: 20px;
+		}
+
+		.crm-section {
+			margin-bottom: 0;
+			.label {
+				display: block;
+				float: none;
+				width: auto;
+				line-height: 1.5em;
+			}
+			.content {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.header-dark {
+		.h3;
+		font-weight: normal;
+		background-color: #efeee7;
+		display: inline-block;
+		margin: 0 0 0 20px;
+		transform: translate3d(0, -27px, 0);
+	}
+
+	.header-dark + * {
+		margin-top: -16px !important;
+		padding-top: 0;
+	}
+
+
+}
+
+
+.crm-container .crm-submit-buttons {
+	height: auto !important;
+
+	span.crm-button {
+		float: none !important;
+		display: inline-block;
+		padding: 0;
+	}
+
+	span.crm-button:first-child {
+		margin-left: 0 !important;
+	}
+}
+
+.crm-container .crm-submit-buttons .crm-button input{
+	.btn;
+	text-shadow: none;
+}
+
+#crm-container .event-info .crm-section {
+	margin-top: 1em;
+	.label {padding-top: 6px};
+	.label label, .label, .content{
+		line-height: 1.5em;
+		font-size: 18px;
+	}
+	table.fee_block-table {
+		font-size: 18px;
+		line-height: 1.5em;
+		td.fee_amount-value {
+			font-weight: bold;
+		}
+		td.price_set_option-label {
+			padding-left: 0;
+		}
+	}
+}
+
+// Hide top registration
+.crm-container .register_link-top {
+	display:  none;
+}
+
+// Center Bottom Register button
+.crm-container .crm-actionlinks-bottom .register_link-section {
+	margin: 1.5em 0;
+	text-align: center;
+	a {
+		float: none;
+	}
+}
+
+// Put admin ribbon in margin
+#crm-container .crm-event-manage-tab-actions-ribbon {
+	position: absolute;
+	top: 0;
+	left: 100%;
+
+	li {
+		float: none;
+	}
+
+	#crm-event-configure-link:after {
+		content: 'Configure Event';
+		font-weight: bold;
+	}
+
+	#crm-participant-links:after {
+		content: 'Find Participants';
+		font-weight: bold;
+	}
+}
+
+
+// Additional participants should be smaller
+#crm-container #additional_participants {
+	display: inline-block;
+	width: 200px;
+}
+
+#crm-container .crm-event-register-form-block #priceset {
+	.label {
+		display: block;
+		float: none;
+		width: auto;
+		text-align: left
+	}
+
+	// allow teal boxes to wrap
+	.price-set-option-content label {
+		white-space: normal;
+		text-align: left;
+	}
+
+	#pricesetTotal .label {
+		float: left;
+	}
+
+	#pricesetTotal #pricevalue {
+		line-height: 34px;
+	}
+}
+
+// Add $ to donation form
+#priceset div.content.other_amount-content {
+    position: relative;
+}
+
+#priceset div.content.other_amount-content:before {
+    content: '$';
+    position: absolute;
+    top: 6px;
+    left: 14px;
+    line-height: 34px;
+    color: @blue-dark;
+    font-family: "jaf-bernina-sans-condensed", Impact, sans-serif;
+    font-size: 18px
+}
+#priceset div.content.other_amount-content input {
+    padding-left: 30px;
+}
+#crm-container.crm-content-block {
+    float: none;
+}
+

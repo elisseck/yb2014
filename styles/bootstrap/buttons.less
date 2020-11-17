@@ -1,0 +1,320 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: @btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: none;
+  white-space: nowrap;
+  font-family: @font-family-headings;
+  text-transform: uppercase;
+  box-shadow: 1px 2px 3px rgba(0,0,0,.25);
+  color: @btn-default-color; 
+  background: @btn-default-bg;
+  .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @border-radius-base);
+  .user-select(none);
+
+  &,
+  &:active,
+  &.active {
+    &:focus {
+      .tab-focus();
+    }
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: @blue-dark;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    .opacity(.65);
+    .box-shadow(none);
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-donate {
+  color: @blue-dark;
+  background: @yellow;
+  padding: 12px 22px;
+  font-size: 20px;
+
+  &:hover,
+  &:focus {
+    color: @white;
+  }
+
+  &.header {
+    border-radius: @border-radius-base;
+    transition: padding .2s ease-in-out;
+
+    @media (min-width: @screen-sm-min) {
+      border-radius: 0 0 @border-radius-base @border-radius-base;
+    }
+
+    &:hover {
+      @media (min-width: @screen-sm-min) {
+        padding-top: 32px;
+      }
+    }
+  }
+}
+
+.btn-carrot {
+  position: relative;
+  background: none;
+  font-family: @font-family-base;
+  color: @white;
+  box-shadow: none;
+  text-transform: none;
+  font-weight: 300;
+  padding: 0 26px 0 0;
+
+  strong {
+    color: @teal;
+    font-family: @font-family-headings;
+    text-transform: uppercase;
+  }
+
+  &:after {
+    font-family: 'icomoon';
+    content: "\e601";
+    color: @teal;
+    font-size: 20px;
+    position: absolute;
+    right: -2px;
+    top: 0;
+    transform: rotate(270deg);
+  }
+
+  &:hover {
+    color: @white;
+
+    strong {
+      color: @yellow;
+    }
+
+    &:after {
+      color: @yellow;
+    }
+  }
+}
+
+.btn-carrot2 {
+  position: relative;
+  padding-right: 39px;
+
+  &:after {
+    font-family: 'icomoon';
+    content: "\e601";
+    color: @yellow;
+    font-size: 20px;
+    position: absolute;
+    right: 13px;
+    top: 7px;
+    transform: rotate(270deg);
+  }
+}
+
+.btn-carrot3 {
+  position: relative;
+  background: none;
+  font-family: @font-family-base;
+  color: @teal;
+  box-shadow: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  &:after {
+    font-family: 'icomoon';
+    content: "\e601";
+    color: @teal;
+    font-size: 16px;
+    position: absolute;
+    right: -2px;
+    top: 6px;
+    transform: rotate(270deg);
+  }
+
+  &:hover {
+    color: @blue;
+
+    &:after {
+      color: @blue;
+    }
+  }
+}
+
+
+.btn-play {
+  background: none;
+  box-shadow: none;
+  color: @teal;
+  font-family: @font-family-base;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 900;
+  padding: 0;
+  position: relative;
+
+  &:after {
+    font-family: 'icomoon';
+    content: "\e600";
+    color: @white;
+    font-size: 23px;
+    padding: 6px 0 0 5px;
+    position: absolute;
+    right: -68px;
+    top: -5px;
+    background: @teal;
+    height: 40px;
+    width: 50px;
+    border-radius: @border-radius-base;
+  }
+
+  &:hover:after {
+    background: @blue-dark;
+  }
+
+  .align-right & {
+    right: 71px;
+  }
+}
+
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: @link-color;
+  cursor: pointer;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    .box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: @btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@padding-base-vertical; @padding-base-horizontal; 15px; @line-height-small; @border-radius-base);
+}
+.btn-xs {
+  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-base);
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+
+// close
+// --------------------------------------------------
+.btn-close {
+  .hide-text();
+  background: none;
+  border: none;
+  position: relative;
+
+  &:after {
+    content: '\e60c';
+    font-family: 'icomoon';
+    font-size: 18px;
+    color: @teal;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &:hover {
+    &:after {
+      color: @blue;
+    }
+  }
+}
+
+// btn wrapper
+// --------------------------------------------------
+.btn-wrapper {
+  a {
+    .btn();
+  }
+}

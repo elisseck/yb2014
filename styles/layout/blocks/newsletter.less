@@ -1,0 +1,46 @@
+// newsletter signups
+
+.region-header .webform-client-form {
+	position: relative;
+
+	.webform-submit {
+		.text-hide();
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 24px;
+		height: 34px;
+		background: @teal;
+		border-radius: 0 @border-radius-base @border-radius-base 0;
+		margin-top: 0; // overriding some drupal default shit
+
+		&:after {
+			content: "\e603";
+			font-family: 'icomoon';
+			position: absolute;
+			top: 17px;
+			right: 3px;
+			font-size: 28px;
+			color: @white;
+		}
+
+		&:hover {
+			background: @blue;
+		}
+	}
+
+	&.footer {
+
+		.form-control {
+			.placeholder(@blue);
+		}
+
+		.btn {
+			background: @blue;
+
+			&:hover {
+				background: @teal;
+			}
+		}
+	}
+}

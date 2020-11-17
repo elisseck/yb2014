@@ -1,0 +1,56 @@
+// newsletter signups
+
+.form-directory-search {
+	position: relative;
+
+	label {
+		color: @white;
+		padding: 0 0 14px 54px;
+		margin-left: 20px;
+		position: relative;
+		font-size: 17px;
+		
+		strong {
+			color: @yellow;
+		}
+
+		&:before {
+			content: "\e602";
+			font-family: 'icomoon';
+			position: absolute;
+			top: 1px;
+			left: -4px;
+			font-size: 30px;
+			color: @yellow;			
+		}
+	}
+
+	.form-control {
+		.placeholder(@blue);
+	}
+
+	.btn {
+		.text-hide();
+		position: absolute;
+		bottom: -4px;
+		right: 0;
+		width: 24px;
+		height: 34px;
+		background: @teal;
+		border-radius: 0 @border-radius-base @border-radius-base 0;
+
+		&:after {
+			content: "\e60e";
+			font-family: 'icomoon';
+			position: absolute;
+			top: 17px;
+			right: 10px;
+			font-size: 20px;
+			color: @white;
+		}
+
+		&:hover {
+			background: @blue;
+		}
+	}
+}

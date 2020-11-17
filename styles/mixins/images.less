@@ -1,0 +1,28 @@
+// ............................................................
+// svg background image
+
+.img-svg-single(@name; @width; @height;) {
+  background: transparent url('../img/single/@{name}.svg') no-repeat center center;
+  background-size: @width @height;
+  width: @width;
+  height: @height;	
+
+  .no-svg & {
+  	background-image: url('../img/single/@{name}.png');
+  }
+}
+
+.img-single(@name; @width; @height;) {
+  background: transparent url('../img/single/@{name}.png') no-repeat center center;
+  background-size: @width @height;
+  width: @width;
+  height: @height;	
+}
+
+
+.img-single-jpg(@name; @width; @height;) {
+  background: transparent url('../img/single/@{name}.jpg') no-repeat center center;
+  background-size: @width @height;
+  width: @width;
+  height: @height;  
+}

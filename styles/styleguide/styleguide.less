@@ -1,0 +1,98 @@
+@import '../style.less';
+
+
+// styleguide specific
+
+/*------------------------------------*\
+    $MAIN CONTENT AREA
+\*------------------------------------*/
+[role=main] {
+	padding: 0 !important;
+}
+
+body {
+	padding: 15px 40px 40px;
+}
+
+.sg-label {
+	font-size: 11px;
+	line-height: 10px !important;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.sg-fonts {
+	li {
+		margin-bottom: 30px;
+	}
+}
+
+.sg-colors li {
+	width: 8em !important;
+	border: none !important;
+}
+
+.for(@swatches); .-each(@swatches) {
+    @name: e(@swatches);
+    .sg-@{name} {
+    	background: @@name;
+    }
+}
+
+.sg-pattern-head {
+	padding: 0 !important;
+	font-size: 24px !important;
+	border-bottom-color: #aaa !important;
+	margin: 20px 0 !important;
+
+	a {
+		font-size: 12px;
+		line-height: 12px;
+		margin: 0;
+		padding: 0;
+		color: #fff !important;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: 400;
+		padding: 7px 8px;
+		background: #aaa;
+		display: inline-block !important;
+	}
+}
+
+.sg-grids {
+	text-align: center;
+	& > * {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	& > *:nth-child(odd) {
+		background: #ccc;
+	}
+	& > *:nth-child(even) {
+		background: #eee;
+	}
+}
+
+.throbber {
+	background: transparent url('misc')
+}
+
+
+
+
+//////////////////////////////////
+// specific fixes for youthbuild
+
+.sg-pattern {
+	.hero-home {
+		@media (min-width: @screen-sm-min) {
+			height: 600px;
+		}
+	}
+}
+
+#organisms-header {
+	min-height: 530px;
+}

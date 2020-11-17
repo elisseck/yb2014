@@ -1,0 +1,46 @@
+// modals
+
+// making the background blue so the logo looks good on it
+#cboxLoadedContent {
+	background: @blue url('../img/single/blue-noise.png') repeat;
+
+	.webform-client-form {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+}
+
+// this was adding some weird spacing
+#cboxTitle {
+	padding: 0;
+}
+
+//close button
+#cboxClose.cbox-close-plain {
+	color: @teal;
+	&:hover {
+		color: @yellow;
+	}
+}
+
+
+//text inside the splash
+.splash-text {
+	text-align: center;
+	color: white;
+	margin: 180px 0 37px;
+	position: relative;
+	color: @yellow;
+	font-size: 19px;
+	font-weight: 600;
+
+	// the logo
+	&:before {
+		content: '';
+		.img-svg-single("youthbuild-logo"; 174px; 62px;);
+		display: block;
+		position: absolute;
+		top: -90px;
+		left: 209px;		
+	}
+}

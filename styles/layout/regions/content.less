@@ -1,0 +1,33 @@
+// Insert your styling here.
+
+.main-content{
+	padding-top: 20px;
+	padding-bottom: 100px;
+	
+	@media (min-width: @screen-md-min) {
+		padding-top: 80px;
+	}
+
+	.column-1 {
+
+		@media (min-width: @screen-sm-min) {
+			padding-right: 33px; // extra spacing between right rail and main column
+		}
+	}
+
+	.node-type-story &,
+	.page-whatwedo &,
+	.page-home &,
+	.page-stories &,
+	.no-main-content & {
+		padding-top: 0;
+	}
+
+	.no-main-content & {
+		padding-bottom: 0;
+	}
+}
+
+.block-system {
+	margin-bottom: 40px;
+}

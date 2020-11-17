@@ -1,0 +1,47 @@
+// events
+
+
+.featured-event {
+	.card();
+	position: relative;
+	
+	.block-title {
+		.card-label();
+		font-family: @font-family-base;
+		position: absolute;
+		top: 0;
+		left: 20px;
+		z-index: 99;
+		background: @blue-lightish; // special light blue background on label for events
+	}
+}
+
+.card-list-display {
+
+	.grid {
+		max-width: 310px;
+		margin: 0 auto;
+		@media (min-width: @screen-sm-min) {
+			max-width: none;
+		}
+	}
+
+	.node,
+	.file {
+		.card();
+		margin-bottom: 20px;
+	}
+
+	.row {
+		@media (min-width: @screen-sm-min) {
+			margin-bottom: 14px;
+		}
+	}
+}
+
+// some space above the register button for event nodes
+.node-event {
+	.btn-wrapper {
+		margin-top: 20px;
+	}
+}

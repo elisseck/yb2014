@@ -1,0 +1,21 @@
+<div class="group-footer-main col-sm-8 col-md-7">
+    <div class="region region-footer-two">
+		<section id="block-block-14" class="block block-block">
+  			<ul class="list-unstyled logo-group">
+  				<li>
+  					<div class="logo-main-small"></div>
+  				</li>
+				<li>
+					<a href="http://develop.yb.dev.echoditto.com/youthbuild-international"><div class="logo-international"></div></a>
+				</li>
+			</ul>
+			<p class="footer-text">YouthBuild USA and YouthBuild International are divisions of YouthBuild USA, Inc.</p>
+			<div class="group-labor">
+				<div class="logo-labor"></div>
+				<p class="footer-text">Primary funding for U.S. YouthBuild programs comes from the U.S. Department of Labor.</p>
+			</div>
+			<p class="footer-text">Copyright © 2014 YouthBuild USA, Inc.</p>
+		</section>
+	</div>
+</div>
+<div class="group-power"><p class="footer-powered">Powered by:</p><a href="http://echo.co/"><div class="logo-echo"></div></a><div class="icon-plus"></div><a href="http://iamneal.com/"><div class="logo-neal"></div></a></div>

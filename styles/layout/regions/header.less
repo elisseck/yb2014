@@ -1,0 +1,160 @@
+// Insert your styling here.
+
+.header-top {
+	background: @blue url('../img/single/blue-noise.png') repeat;
+	position: relative;
+	z-index: 102;
+	@media (min-width: @screen-sm-min) {
+		z-index: 0;
+		height: 82px;
+	}
+	@media (min-width: @screen-md-min) {
+		background: none;
+		height: auto;
+	}	
+}
+
+.logo-main {
+	display: block;
+	padding: 10px 0 10px 14px;
+	width: 174px;
+	span {
+		.img-single("youthbuild-logo"; 174px; 62px;);
+		display: block;
+		position: relative;
+	}
+}
+
+//tablet
+.header-top {
+	.logo-main {
+		@media (min-width: @screen-md-min) {
+			display: none;
+		}
+	}
+}
+//desktop
+.navigation-section .logo-main {
+    display: block;
+    margin-bottom: 26px;
+    padding: 0;
+    width: auto;
+    text-align: center;
+
+	span {
+		.img-single("yb-logo2"; 219px; 98px;);	
+		border-radius: 4px;
+		margin: -4px auto 0;
+	}
+}
+
+
+.header-group-2 {
+	.clearfix();
+
+	.region-header > .block {
+		@media (min-width: @screen-sm-min) {
+			float: left;
+		}
+	}
+
+	.social-list {
+		margin: 20px 10px 0 0;
+	}
+
+	.webform-client-form {
+		max-width: 220px;
+		margin: 14px 0 0 0;
+		@media (min-width: @screen-sm-min) {
+			margin: 14px 32px 0 0;
+		}
+	}
+
+	.btn {
+		box-shadow: none; // buttons shouldnt have drop shadows in the header
+	}
+}
+
+.main-header {
+	position: relative;
+	z-index: 200;
+}
+
+.header-group-2 {
+
+	@media (min-width: @screen-sm-min) {
+		position: absolute;
+		right: 0;
+		padding-right: 20px;
+		top: 0;
+	}
+	@media (min-width: @screen-md-min) {
+		padding-right: 100px;
+	}
+}
+
+.container--header-group-2 {
+	@media (min-width: @screen-sm-min) {
+		position: absolute;
+		top: 0;
+	}
+
+	@media (min-width: @screen-md-min) {
+		position: relative;
+		top: auto;
+	}
+}
+
+// mobile offcanvas button
+.mobile-offcanvas {
+	position: absolute;
+	top: 24px;
+	right: 20px;
+	@media (min-width: @screen-sm-min) {
+		display: none;
+	}
+}
+
+.mobile-btn {
+	color: @white;
+	text-transform: uppercase;
+	font-family: @font-family-headings;
+	font-weight: 900;
+	cursor: pointer;
+
+	&:hover {
+		color: @teal;
+	}
+}
+
+.mobile-header-group {
+	padding-bottom: 22px;
+	position: absolute;
+	width: 100%;
+	top: 82px;
+	//z-index: 99999;
+	left: 0;
+	background: @teal url('../img/single/teal-noise.png') repeat;
+	@media (min-width: 0) and (max-width: @screen-sm-min) {
+		transform: translate(0, -100%);
+		transition: transform .2s ease-in-out;
+	}
+
+	@media (min-width: @screen-sm-min) {
+		margin: 0;
+		background: none;
+		position: static;
+		width: auto;
+		top: auto;
+		left: auto;
+		padding: 0;
+	}
+
+	&.is-open {
+		@media (min-width: 0) and (max-width: @screen-sm-min) {
+			transform: translate(0, 0);
+		}
+	}
+
+}
+

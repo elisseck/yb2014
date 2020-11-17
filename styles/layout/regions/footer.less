@@ -1,0 +1,268 @@
+// footer stuff
+
+.main-footer {
+	color: @white;
+	background: @blue url('../img/single/blue-noise.png') repeat;
+	padding-bottom: 90px;
+	padding-top: 20px;
+	position: relative;
+	overflow: hidden;
+	-webkit-font-smoothing: antialiased; // its too light otherwise
+
+	.container {
+		position: relative;
+	}
+	.group-power {
+		margin-top: 20px;
+		text-align: center;
+
+		@media (min-width: @screen-sm-min) {
+			right: 40px;
+			bottom: 18px;
+			position: absolute;
+			margin-top: 0;
+			text-align: right;
+		}
+		@media (min-width: @screen-md-min) {
+			//right: 0;
+		}
+	}
+}
+
+.shadow-container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: transparent url('../img/single/shadow-horizontal.png') repeat-y center top;
+	background-size: 100% 100%;
+	top: 0;
+	display: none;
+	opacity: .8;
+
+	@media (min-width: @screen-sm-min) {
+		display: block;
+	}
+
+	@media (min-width: 1520px) {
+		max-width: 1440px;
+		margin-left: -(1440px * .3);
+		left: 50%;
+	}
+
+	&:after,
+	&:before {
+		content: "";
+		background: transparent url('../img/single/shadow-horizontal-sm.png') repeat;
+		width: 100%;
+		height: 100%;
+		left: -100%;
+		position: absolute;
+		top: 0;
+		opacity: 1;
+	}
+
+	&:before {
+		left: -100%;
+	}
+	&:after {
+		left: 100%;
+	}
+
+	.subfooter & {
+		opacity: .5; // shadow container should be a little lighter over the teal color
+	}
+}
+
+// stuff in the dark blue footer
+
+.group-footer-main {
+	text-align: center;
+
+	@media (min-width: @screen-sm-min) {
+		text-align: left;
+	}
+
+}
+.footer-text {
+	font-size: 12px;
+	line-height: 140%;
+	font-weight: 600;
+}
+
+.footer-powered {
+	text-transform: uppercase;
+	color: @teal;
+	font-family: @font-family-headings;
+	font-size: 9px;
+	line-height: 120%;
+	font-weight: 900;
+}
+
+.icon-plus {
+	color: @teal;
+	font-size: 14px;
+}
+
+.group-power {
+
+	.footer-powered,
+	.icon-plus,
+	a {
+		display: inline-block;
+	}
+
+	.logo-echo {
+		position: relative;
+		top: 7px;
+		margin-right: 6px;
+		background-position: center left;
+	}
+
+	.logo-neal {
+		position: relative;
+		top: 2px;
+	}
+
+	.footer-powered {
+		padding-right: 6px;
+	}
+
+	.icon-plus {
+		padding-right: 6px;
+	}
+}
+
+.logo-group {
+	text-align: center;
+
+	@media (min-width: @screen-sm-min) {
+		text-align: left;
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	li:first-child {
+		margin-bottom: 20px;
+
+		@media (min-width: @screen-sm-min) {
+			border-right: 1px solid @teal;
+			padding-right: 24px;
+			margin-right: 20px;
+			margin-bottom: 0;
+			height: 48px;
+		}
+	}
+
+	.logo-main-small {
+		position: relative;
+		top: 11px;
+	}
+}
+
+.group-labor {
+	display: table;
+	vertical-align: middle;
+	text-align: left;
+	max-width: 440px;
+	margin: 20px auto;
+
+	@media (min-width: @screen-sm-min) {
+		margin: 30px 0 22px 0;
+	}
+
+	.logo-labor {
+		display: table-cell;
+		width: 86px;
+		background-position: center left;
+	}
+
+	p {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+// support section of the footer
+.subfooter {
+	text-align: center;
+	z-index: 10;
+
+	.block-title {
+		display: none;
+	}
+}
+
+.subfooter-container {
+	text-align: left;
+	color: @white;
+	background: @teal url('../img/single/teal-noise.png') repeat;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	position: relative;
+	overflow: hidden;
+	-webkit-font-smoothing: antialiased; // its too light otherwise
+
+	.container {
+		position: relative;
+	}
+}
+
+// stuff in the support section at the bottom
+
+.support-header {
+	color: @yellow;
+	text-shadow: 0 0 5px rgba(0,0,0,.25);
+	margin-bottom: 10px;
+}
+
+.support-subheader {
+	text-transform: uppercase;
+	font-size: @font-size-h5;
+	line-height: @line-height-h5;
+	text-shadow: 0 0 5px rgba(0,0,0,.25);
+	color: @white;
+	font-weight: 300;
+	margin-bottom: 16px;
+
+	strong {
+		color: @yellow;
+		font-weight: 900;
+	}
+}
+
+.button-group {
+	margin-top: 20px;
+	li {
+		margin-bottom: 10px;
+
+		@media (min-width: @screen-xs-min) {
+			display: inline-block;
+			margin-bottom: 0;
+		}
+	}
+
+	li:first-child {
+		@media (min-width: @screen-xs-min) {
+			border-right: 1px solid @yellow;
+			padding-right: 24px;
+			margin-right: 20px;
+		}
+	}
+}
+
+.social-list.footer {
+	border-bottom: 2px dotted @white;
+	padding-bottom: 16px;
+	margin-bottom: 16px;
+}
+
+//newsletter signup in the footer
+.region-support-footer-two {
+	.form-item {
+		margin-bottom: 0;
+	}
+}
+

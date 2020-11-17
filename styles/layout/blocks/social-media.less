@@ -1,0 +1,176 @@
+// social media links
+
+
+
+// some less mixins for social media
+
+// the array below is the name of the class for each social media, then the icon characters from icomoon
+@social:
+    'facebook'  '\e607',
+    'flickr'  '\e60a',
+    'youtube' '\e609',
+    'twitter'  '\e608';
+
+.mixin-social-list(@name, @icon) {
+    .@{name}:before {
+        content: @icon;
+    }
+}
+
+.make-social-list() {
+    .-(length(@social));
+    .-(@i) when (@i > 0) {
+        .-((@i - 1));
+        @value: extract(@social, @i);
+        @name:  e(extract(@value, 1));
+        @icon: extract(@value, 2);
+        @color: extract(@value, 3);
+        .mixin-social-list(@name, @icon);
+    }
+}
+
+// this mixin is for the social share list in the content. It has a third variable for the background color.
+// we need those double quotes over the icon for some reason here. That's not a typo.
+@socialcontent:
+    'facebook'  "'\e607'" #3C5998,
+    'twitter'  "'\e608'" #00ABEF,
+    'googleplus'  "'\e606'" #DD4B39,
+    'email' "'\e604'" #0CAAAC;
+
+.mixin-social-content(@name, @icon, @color) {
+    .@{name} {
+    	background: @color;
+
+		&:before {
+        	content: @icon;
+    	}
+
+    	&:hover {
+    		background: lighten(@color, 10%);
+    	}
+    }
+}
+
+.make-social-content() {
+    .-(length(@socialcontent));
+    .-(@i) when (@i > 0) {
+        .-((@i - 1));
+        @value: extract(@socialcontent, @i);
+        @name:  e(extract(@value, 1));
+        @icon:  e(extract(@value, 2));
+        @color: extract(@value, 3);
+        .mixin-social-content(@name, @icon, @color);
+    }
+}
+
+
+// this class is on both the header and footer
+
+.social-list {
+
+	a {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		position: relative;
+		margin-right: 19px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			font-size: 24px;
+			font-family: 'icomoon';
+		}
+	}
+
+	.make-social-list();
+
+
+	// just the social list in the header
+	&.header {
+		a {
+			color: @white;
+			@media (min-width: @screen-sm-min) {
+				color: @teal;
+			}
+
+			&:hover {
+				color: @blue;
+			}
+		}
+	}
+
+	// just the social list in the footer
+	&.footer {
+		a {
+			color: @blue;
+			margin-right: 22px;
+
+			&:before {
+				font-size: 26px;
+			}
+			
+			&:hover {
+				color: @teal;
+			}
+		}
+	}
+
+	&.content {
+		display: inline-block;
+
+		a {
+			color: @white;
+			width: 28px;
+			height: 28px;
+			margin-right: 17px;
+
+			&:before {
+				font-size: 19px;
+				text-align: center;
+				left: 5px;
+				top: 0;
+			}
+		}
+
+		.make-social-content();
+
+		// special treatment for these icons
+		.facebook:before {
+			font-size: 23px;
+			left: 6px;
+			top: 2px;
+		}
+
+		.email:before {
+			font-size: 22px;
+			left: 0px;
+		}
+	}
+}
+
+.social-label {
+	.small-labels();
+	color: @blue;
+}
+
+.share-wrapper  {
+	margin-bottom: 30px;
+
+	.social-label,
+	.social-list {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.share-label {
+		margin: 0 10px 6px 0;
+		color: @blue;
+		font-size: 12px;
+		position: relative;
+		top: 2px;
+
+	}
+}
+
+

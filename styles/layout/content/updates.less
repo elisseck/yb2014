@@ -1,0 +1,46 @@
+// updates block
+
+.home-update {
+	background: @off-white;
+}
+
+.home-updates,
+#block-views-updates-block-1 .view-updates {
+	max-width: 384px;
+
+	@media (min-width: @screen-sm-min) {
+		max-width: 100%;
+	}
+
+	.view-content {
+		padding-top: 80px;
+		padding-bottom: 100px;
+	}
+}
+
+.recent-updates {
+	background: @white;
+	.card();
+
+	.block-title {
+		.card-label();
+		background: @blue;
+		margin: 0 0 10px 20px;
+
+		&:after {
+			color: @yellow;
+		}
+	}
+
+	.view {
+		padding: 20px 20px 30px;
+	}
+
+	ul {
+		margin-bottom: 0;
+	}
+
+	.more-link {
+		.see-more();
+	}
+}

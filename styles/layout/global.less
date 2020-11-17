@@ -1,0 +1,490 @@
+// global sheet for things like fields and field groups, etc. Misc stuff
+
+.logo-main-small {
+	.img-svg-single("youthbuild-logo-small"; 150px; 42px;)
+}
+
+.logo-international {
+	.img-svg-single("youthbuild-logo-international"; 156px; 36px;)
+}
+
+.logo-labor {
+	.img-single("logo-labor"; 70px; 70px;)
+}
+
+.logo-neal {
+	.img-single("logo-neal"; 44px; 14px;)
+}
+
+.logo-echo {
+	.img-single("logo-echo"; 44px; 21px;)
+}
+
+.slide-carrot {
+	width: 54px;
+	height: 30px;
+	position: relative;
+
+	&:after {
+		content: '\e602';
+		font-family: icomoon;
+		color: @yellow;
+		position: absolute;
+		top: 0;
+		left: -5;
+		font-size: 40px;
+	}
+}
+
+.small-labels {
+	font-weight: 900;
+	font-size: 12px;
+	line-height: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+//page headers
+.page-header {
+	border-bottom: 5px solid @blue;
+	text-transform: uppercase;
+	padding-bottom: 17px;
+}
+
+//subheader
+.subheader {
+	border-bottom: 1px solid @teal-dark;
+	padding-bottom: 15px;
+	font-size: @font-size-h3;
+	line-height: @line-height-h3;
+	margin-top: 34px;
+}
+
+// card
+
+//card title
+.card-label {
+	.small-labels();
+	color: @white;
+	background: @teal;
+	display: inline-block;
+	padding: @padding-base-vertical @padding-base-horizontal;
+	position: relative;
+	padding-right: 37px;
+
+	&:after {
+		font-family: 'icomoon';
+		content: "\e601";
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		font-size: 18px;
+		color: @blue-dark;
+	}
+
+	// alternate style of labels on 'recent updates'
+	&.blue {
+		background: @blue;
+
+		&:after {
+			color: @yellow;
+		}
+	}
+}
+
+// card title
+.card-title {
+	font-size: @font-size-h4;
+	line-height: @line-height-h4;
+}
+
+// for views in cards, like on 'recent updates'
+.card-title-sm {
+	font-size: @font-size-h6;
+	line-height: @line-height-h6;
+}
+
+
+// card location, specifically for events
+.group-card-location,
+.card-location {
+	.small-labels();
+	color: @teal;
+	padding-left: 22px;
+	position: relative;
+	margin-bottom: 20px;
+
+	div {
+		display: block;
+	}
+
+	&:before {
+		font-family: 'icomoon';
+		content: "\e611";
+		position: absolute;
+		top: 2px;
+		left: 0;
+		font-size: 20px;
+	}
+}
+
+// card teaser
+.card-teaser {
+	font-size: 15px;
+	line-height: 140%;
+	margin-bottom: 0;
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.group-card-text {
+	padding: 20px 20px 50px;
+	background: @white;
+}
+
+.card-image {
+	img {
+		.img-responsive();
+	}
+}
+
+.card {
+	box-shadow: 0 1px 4px rgba(0,0,0,.15);
+	max-width: 310px;
+
+	&.featured {
+		position: relative;
+		.card-label {
+			position: absolute;
+			top: 0;
+			left: 20px;
+		}
+	}
+}
+
+.cards .ds-1col{
+	.card();
+}
+
+.group-location {
+	.card-title {
+		margin-bottom: 10px;
+	}
+}
+
+// post posts
+.field-name-field-publish-date {
+	.small-labels();
+}
+
+.group-post-group {
+	margin-top: 20px;
+
+	.field-name-field-image {
+		@media (min-width: @screen-sm-min) {
+			float: right;
+			width: 33.3%;
+			margin: 0 0 20px 20px;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+
+
+// on cards with views
+.see-more {
+	.small-labels();
+	position: relative;
+	a:after {
+		font-family: 'icomoon';
+		content: "\e601";
+		position: absolute;
+		top: -1px;
+		left: 63px;
+		font-size: 16px;
+		transform: rotate(270deg);
+	}
+}
+
+.section-label-wrapper {
+	text-align: center;
+	margin-top: -40px;
+}
+
+.section-label {
+	.small-labels();
+	color: @white;
+	background: @teal url('../img/single/teal-noise.png') repeat;
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	padding: 12px 47px;
+	font-family: @font-family-base;
+
+	&:after,
+	&:before {
+		font-family: 'icomoon';
+		content: "\e601";
+		position: absolute;
+		top: 12px;
+		font-size: 18px;
+		color: @yellow;
+	}
+
+	&:after {
+		right: 18px;
+	}
+
+	&:before {
+		left: 18px;
+	}
+
+	&.blue {
+		background: #001C98; //darker shade of blue
+	}
+
+	&.white {
+		background: @offwhite;
+		color: @blue;
+
+		&:after,
+		&:before {
+			color: @teal;
+		}
+	}
+}
+
+
+
+
+
+// hero stuff
+
+.hero-title {
+	font-size: 32px;
+	font-weight: 300;
+	color: @white;
+	text-transform: uppercase;
+	border-bottom: 5px solid @yellow;
+	line-height: 100%;
+	padding-bottom: 10px;
+
+	@media (min-width: @screen-sm-min) {
+		font-size: 70px;
+	}
+
+	strong {
+		font-weight: 900;
+		color: @yellow;
+		display: block;
+	}
+
+	.blue & {
+		border-bottom-color: @teal;
+
+		strong {
+			color: @teal;
+		}
+	}
+}
+
+.hero-text {
+	font-family: 18px;
+	color: @white;
+	line-height: 180%;
+}
+
+.hero-image {
+	width:100%;
+	height:auto; /* real browsers */
+	min-height:100%; /* real browsers */
+	position: relative;
+	box-shadow: 0 10px 40px rgba(0,0,0,1);
+
+
+	div {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: transparent url('../img/single/shadow.png') no-repeat center center;
+		background-size: 100% 100%;
+	}
+}
+
+.hero-home {
+	position: relative;
+	background: black;
+
+	@media (min-width: @screen-md-min) {
+		width:100%;
+		height:auto; /* real browsers */
+		min-height:100%; /* real browsers */
+	}
+
+	@media (min-width: @screen-md-min) and (max-height: 600px) {
+		min-height: 600px;
+	}
+
+	.hero-image {
+		height: 300px;
+		text-align: left;
+		background-size: cover;
+
+		@media (min-width: @screen-sm-min) {
+			height: 600px;
+			position: relative;
+		}
+
+		@media (min-width: @screen-md-min) {
+			position: absolute;
+			top: 0;
+			width:100%;
+			height:auto; /* real browsers */
+			min-height:100%; /* real browsers */
+		}
+	}
+
+	.container,
+	.row {
+		@media (min-width: @screen-md-min) {
+			//height:100%; /* IE6: treaded as min-height*/
+			//min-height:100%; /* real browsers */
+			//position: absolute;
+			//bottom: 0;
+		}
+	}
+
+	.row {
+	}
+
+	.container {
+		@media (min-width: @screen-sm-min) {
+			position: absolute;
+			bottom: 100px;
+		}
+		@media (min-width: @screen-lg-min) {
+			left: 50%;
+			margin-left: -(73.2em * .5);
+		}
+	}
+
+	// center dat text
+	.hero-text-group {
+		padding-top: 20px;
+		// this textshadowing was throwing some crazy errors in safari earlier on. But its working now, sooooo - just be aware if stuff starts crashing it might be this
+		text-shadow: 0 0 20px rgba(0,0,0, 0.5), 0 0 30px rgba(0,0,0, 0.3), 0 0 40px rgba(0,0,0, 0.2);
+
+		@media (min-width: @screen-sm-min) {
+			//position: absolute;
+			//top: auto;
+  			//bottom: 100px;
+  			//transform: translateY(0);
+  		}
+	}
+
+	.slide-carrot {
+		display: none;
+		@media (min-width: @screen-md-min) {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	.hero-text {
+		margin-bottom: 50px;
+  		@media (min-width: @screen-md-min) {
+  			padding-right: 145px;
+  			margin-bottom: 0;
+  		}
+	}
+}
+
+.align-right .hero-text-group {
+	text-align: right;
+	.make-sm-column-offset(4);
+
+	.hero-text {
+		@media (min-width: @screen-md-min) {
+			padding-right: 0;
+			padding-left: 145px;
+		}
+	}
+}
+
+
+
+// programs, advocacy & partners section
+.block-partners {
+	margin-bottom: 40px;
+	@media (min-width: @screen-sm-min) {
+		margin-bottom: 100px;
+	}
+}
+
+.program-title {
+	font-size: 30px;
+	font-family: @font-family-headings;
+	text-transform: uppercase;
+	font-weight: 300;
+	line-height: 100%;
+	@media (min-width: @screen-sm-min) {
+		font-size: 40px;
+	}
+}
+
+// default page stuf
+.field-name-body {
+	img {
+		margin: 17px 0 30px;
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+// comments
+#comments {
+	border-top: 5px solid @blue;
+	padding-top: 20px;
+	margin-top: 40px;
+}
+
+//addthis
+.block-echo-addthis {
+	text-align: right;
+	margin: 30px 0 32px;
+
+	.social-label,
+	.addthis_toolbox,
+	.addthis_toolbox * {
+		display: inline-block;
+	}
+}
+
+//responsive images inside of nodes and files (videos)
+.node img,
+.file img {
+	.img-responsive();
+}
+
+// needed to reduce this because it was real high
+.leaflet-top, .leaflet-bottom {
+	z-index: 9 !important;
+}
+
+
